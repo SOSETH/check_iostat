@@ -1,0 +1,14 @@
+Source: check-iostat
+Section: devel
+Priority: optional
+Maintainer: Maximilian Falkenstein <mfalkenstein@sos.ethz.ch>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: https://exchange.nagios.org/directory/Plugins/Operating-Systems/Linux/check_iostat--2D-I-2FO-statistics/details
+Vcs-Git: https://github.com/SOSETH/check_iostat.git
+Vcs-Browser: https://github.com/SOSETH/check_iostat
+
+Package: check-iostat
+Architecture: all
+Depends: ${misc:Depends}, bc, systat
+Description: Check I/O usage of disks

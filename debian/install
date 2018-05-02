@@ -1,0 +1,1 @@
+check_iostat /usr/lib/nagios/plugins/
