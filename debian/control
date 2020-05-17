@@ -10,5 +10,5 @@ Vcs-Browser: https://github.com/SOSETH/check_iostat
 
 Package: check-iostat
 Architecture: all
-Depends: ${misc:Depends}, bc, sysstat
+Depends: bc, jq, sysstat, ${misc:Depends}
 Description: Check I/O usage of disks
