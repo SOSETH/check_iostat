@@ -1,0 +1,44 @@
+variables:
+  DISTRIBUTION_VER: "buster"
+  APT_REPO: "sos-buster"
+
+image: soseth/debian-ci-base:$DISTRIBUTION_VER
+
+stages:
+  - lint
+  - build
+  - deploy
+
+lint:
+  stage: lint
+  before_script:
+    - apt-get update -qq
+    - apt-get upgrade -qq
+  script:
+    - apt-get install shellcheck
+    - shellcheck check_iostat
+
+build:
+  stage: build
+  before_script:
+    - apt-get update -qq
+    - apt-get upgrade -qq
+  script:
+    - dpkg-buildpackage -uc -us
+    - mkdir build
+    - mv ../check-iostat*.* build/
+  artifacts:
+    paths:
+    - build/*
+      
+deploy_to_apt:
+  stage: deploy
+  script:
+    - echo "Deploying package to $CI_APT_PREFIX prefix and $DISTRIBUTION_VER version"
+    - sudo -u repo aptly repo add $CI_APT_REPO build/*.deb
+    - sudo -u repo aptly publish update $DISTRIBUTION_VER $DISTRIBUTION_VER
+  only:
+    - tags
+  tags:
+    - apt
+
