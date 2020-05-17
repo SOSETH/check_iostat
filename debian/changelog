@@ -1,3 +1,23 @@
+check-iostat (0.0.6) unstable; urgency=medium
+
+  [ Maximilian Falkenstein ]
+  * Fix typo in deps...
+
+  [ Peter Keresztes Schmidt ]
+  * Enable GitLab CI
+  * Make shellcheck happy and rewrite iostat output parsing
+  * debian: switch to 3.0 (native) and add jq dep
+
+  [ Maximilian Falkenstein ]
+  * Fix typo in deps...
+
+  [ Peter Keresztes Schmidt ]
+  * Enable GitLab CI
+  * Make shellcheck happy and rewrite iostat output parsing
+  * debian: switch to 3.0 (native) and add jq dep
+
+ -- Peter Keresztes Schmidt <peterke@sos.ethz.ch>  Mon, 18 May 2020 01:07:16 +0200
+
 check-iostat (0.0.5) unstable; urgency=medium
 
   * Initial release
