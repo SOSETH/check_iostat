@@ -16,7 +16,7 @@ lint:
     - apt-get upgrade -qq
   script:
     - apt-get install shellcheck
-    - shellcheck check_iostat
+    - shellcheck -e SC2230,SC1117 check_iostat
 
 build:
   stage: build
