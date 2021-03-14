@@ -1,3 +1,10 @@
+check-iostat (0.0.7) unstable; urgency=medium
+
+  [ Jan Veen ]
+  * Fix wrong error handling by remove the brackets so the exit command runs on the main shell.
+
+ -- Maximilian Falkenstein <maximilian.falkenstein@sos.ethz.ch>  Sun, 14 Mar 2021 13:21:21 +0100
+
 check-iostat (0.0.6) unstable; urgency=medium
 
   [ Maximilian Falkenstein ]
