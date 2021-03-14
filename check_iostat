@@ -51,7 +51,7 @@ help () {
 
 # Ensuring we have the needed tools:
 { [ ! -f "$iostat" ] || [ ! -f "$bc" ] || [ ! -f "$jq" ]; } && \
-	( echo -e "ERROR: You must have iostat, bc and jq installed in order to run this plugin\n" && exit 3)
+	echo -e "ERROR: You must have iostat, bc and jq installed in order to run this plugin\n" && exit 3
 
 # Getting parameters:
 while getopts "d:w:c:h" OPT; do
